@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Honey Sunny</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .honeycomb-bg {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><path d="M50,0 L100,25 L100,75 L50,100 L0,75 L0,25 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+      background-size: 100px;
+    }
+    .mobile-nav {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .mobile-nav {
+        display: block;
+      }
+      .desktop-nav {
+        display: none;
+      }
+      .honeycomb-bg {
+        background-size: 60px;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen relative pt-16">
+  <!-- Mobile Navbar -->
+  <section class="fixed top-0 left-0 w-full z-50 bg-white shadow mobile-nav">
+    <nav class="bg-white shadow flex items-center justify-between px-4 py-4">
+      <div class="flex items-center">
+        <button id="mobile-menu-toggle" class="text-gray-700">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+      <div class="flex items-center">
+        <img src="./Logo.PNG" class="w-12" alt="Logo">
+      </div>
+      <div class="w-8"></div> <!-- Spacer for alignment -->
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden bg-white shadow-lg">
+      <div class="flex flex-col py-4">
+        <a href="#home" class="px-6 py-3 text-gray-700 hover:bg-yellow-50 hover:text-yellow-600">Home</a>
+        <a href="#about" class="px-6 py-3 text-gray-700 hover:bg-yellow-50 hover:text-yellow-600">About</a>
+        <a href="#gallery" class="px-6 py-3 text-gray-700 hover:bg-yellow-50 hover:text-yellow-600">Gallery</a>
+        <a href="#contact" class="px-6 py-3 text-gray-700 hover:bg-yellow-50 hover:text-yellow-600">Contact</a>
+        <a href="#products" class="px-6 py-3 text-gray-700 hover:bg-yellow-50 hover:text-yellow-600">Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Desktop Navbar -->
+  <section class="fixed top-0 left-0 w-full z-50 bg-white shadow desktop-nav">
+    <nav class="bg-white shadow flex items-center justify-around px-4 md:px-10 py-4">
+      <!-- Left group -->
+      <div class="flex items-center space-x-4 md:space-x-6 flex-[0.8]">
+        <a href="#home" class="text-gray-700 hover:text-yellow-500 text-sm">Home</a>
+        <a href="#about" class="text-gray-700 hover:text-yellow-500 text-sm">About</a>
+        <a href="#gallery" class="text-gray-700 hover:text-yellow-500 text-sm">Gallery</a>
+      </div>
+      <!-- Center logo -->
+      <div class="flex items-center flex-shrink-0">
+        <img src="./Logo.PNG" class="w-16" alt="Logo">
+      </div>
+      <!-- Right group -->
+      <div class="flex items-center space-x-4 md:space-x-6 flex-[0.8] justify-end">
+          <a href="#contact" class="text-gray-700 hover:text-yellow-500 text-sm">Contact</a>
+          <a href="#products" class="text-gray-700 hover:text-yellow-500 text-sm">Products</a>
+      </div>
+    </nav>
+  </section>
+  
+
+  <!-- Hero Section -->
+  <section id="home" class="flex bg-yellow-400 flex-col md:flex-row items-center justify-center py-16 px-4 md:px-24 mt-4">
+    <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left space-y-4">
+        <h1 class="text-white font-bold text-4xl md:text-6xl tracking-tight">Red Harvest Honey</h1>
+      <h1 class="text-2xl md:text-4xl font-bold text-white leading-tight">Healthy Honey<br>Fresh from the Apiary</h1>
+      <p class="text-sm md:text-base text-yellow-900 font-semibold">OUR BEES WORKED HARD FOR YOU</p>
+      <a href="#" class="mt-4 inline-block bg-white text-yellow-500 font-bold rounded-full px-6 py-2 md:px-8 md:py-2 shadow hover:bg-yellow-100 transition">Let's go</a>
+    </div>
+    <div class="flex-1 flex justify-center mt-8 md:mt-0">
+      <img src="./Background.jpg" alt="Honey" class="rounded-xl w-full md:w-3/4 object-cover border-4 md:border-8 border-white shadow-lg">
+    </div>
+  </section>
+  <!-- Dripping honey SVG divider (realistic drips, edge-to-edge) -->
+  <div class="w-full bg-yellow-400 overflow-hidden leading-none" style="margin-bottom: -1px;">
+    <svg class="w-full h-[17px] md:h-[25px] block" viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,0 C120,80 240,0 360,60 C480,120 600,0 720,80 C840,160 960,0 1080,60 C1200,120 1320,40 1440,80 L1440,100 L0,100 Z" fill="#fff"/>
+    </svg>
+  </div>
+
+
+  <!-- About Us Section -->
+  <section id="about" class="bg-white py-16 px-4 md:px-24 flex flex-col md:flex-row items-center justify-between">
+    <div class="flex-1 max-w-xl space-y-8 order-2 md:order-1">
+      <div class="mb-6">
+        <p class="text-yellow-500 text-sm mb-1">Welcome to</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Our Natural Honey</h2>
+      </div>
+      <div class="grid grid-cols-1 gap-6">
+        <!-- Card 1 -->
+        <div class="flex items-start space-x-4">
+          <div class="bg-yellow-400 text-white font-bold rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-base md:text-lg">01</div>
+          <div>
+            <h3 class="font-semibold text-gray-800">100% Natural & Pure</h3>
+            <p class="text-gray-600 text-sm">Our honey is completely natural, free from any additives or artificial ingredients. Harvested straight from the hive, it preserves the original taste and texture. Enjoy honey as nature intended—pure, raw, and unprocessed.</p>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="flex items-start space-x-4">
+          <div class="bg-yellow-400 text-white font-bold rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-base md:text-lg">02</div>
+          <div>
+            <h3 class="font-semibold text-gray-800">Sourced from Ethiopia's Finest Flora</h3>
+            <p class="text-gray-600 text-sm">Collected from the blossoms of wildflowers, acacia trees, and forest plants. Each region gives the honey a distinct flavor and aroma. It’s a true taste of Ethiopia’s rich biodiversity.</p>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="flex items-start space-x-4">
+          <div class="bg-yellow-400 text-white font-bold rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-base md:text-lg">03</div>
+          <div>
+            <h3 class="font-semibold text-gray-800">Rich in Nutrients</h3>
+            <p class="text-gray-600 text-sm">Packed with antioxidants, enzymes, and natural sugars for a healthy boost. It provides quick energy and supports overall wellness. Perfect for a nutritious start to your day.</p>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="flex items-start space-x-4">
+          <div class="bg-yellow-400 text-white font-bold rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-base md:text-lg">04</div>
+          <div>
+            <h3 class="font-semibold text-gray-800">Multiple Uses</h3>
+            <p class="text-gray-600 text-sm">Great as a natural sweetener in tea, coffee, or baking. Also used in skincare routines for hydration and glow. Versatile and delicious in every drop.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-1 flex justify-center mt-10 md:mt-0 order-1 md:order-2">
+      <img src="./1.jpg" alt="Honey Jar" class="w-full md:w-3/4 max-w-full rounded-xl shadow-lg">
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-16 bg-white relative honeycomb">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="flex flex-col md:flex-row md:flex-wrap justify-center items-stretch gap-8">
+        <section class="py-12 md:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+            <!-- Product Images -->
+            <div class="space-y-4">
+              <!-- Main Image -->
+              <div>
+                <img id="main-honey-image" src="photo_2025-07-24_14-05-34.jpg" alt="Traditional Forest Honey" class="w-full h-auto max-h-96 object-contain p-6">
+              </div>
+        
+              <!-- Thumbnail Gallery -->
+              <div class="grid grid-cols-4 gap-3">
+                <div class="cursor-pointer border border-gray-200 rounded-lg overflow-hidden hover:border-yellow-400 transition" onclick="document.getElementById('main-honey-image').src='./img-3.jpg'">
+                  <img src="./img-3.jpg" alt="Honey Front View" class="w-full h-20 object-cover">
+                </div>
+                <div class="cursor-pointer border border-gray-200 rounded-lg overflow-hidden hover:border-yellow-400 transition" onclick="document.getElementById('main-honey-image').src='./photo_2025-07-24_14-05-25.jpg'">
+                  <img src="./photo_2025-07-24_14-05-25.jpg" alt="Honey Side View" class="w-full h-20 object-cover">
+                </div>
+                <div class="cursor-pointer border border-gray-200 rounded-lg overflow-hidden hover:border-yellow-400 transition" onclick="document.getElementById('main-honey-image').src='./photo_2025-07-24_14-05-34.jpg'">
+                  <img src="./photo_2025-07-24_14-05-34.jpg" alt="Honey Texture" class="w-full h-20 object-cover">
+                </div>
+                <div class="cursor-pointer border border-gray-200 rounded-lg overflow-hidden hover:border-yellow-400 transition" onclick="document.getElementById('main-honey-image').src='./honeyIMG.png'">
+                  <img src="./honeyIMG.png" alt="Honey Usage" class="w-full h-20 object-cover">
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="flex flex-col justify-center">
+              <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Our Honey Gallery</h1>
+              <p class="text-gray-700 mb-6">Wild harvested from the pristine highland forests of Ethiopia, this honey carries the essence of diverse wildflowers and ancient trees. Each jar is a testament to traditional beekeeping methods passed down through generations.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="py-16 md:py-24 bg-yellow-400 relative overflow-hidden honeycomb-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Our Honey Collection
+        </h2>
+        <div class="w-24 h-1 bg-yellow-400 mx-auto mb-4 md:mb-6"></div>
+        <p class="text-lg md:text-xl text-white max-w-3xl mx-auto">
+          Each variety tells a story of Ethiopia's unique terroir and traditional beekeeping heritage
+        </p>
+      </div>
+
+      <div id="products-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <!-- Product 1 -->
+        <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 border-2 border-yellow-400/30">
+          <div class="relative h-56 md:h-64 bg-white flex items-center justify-center p-4 md:p-6 honey-drip">
+            <img
+              src="./img-3.jpg"
+              alt="Traditional Forest Honey"
+              class="h-40 md:h-48 object-contain transition-transform duration-500 hover:scale-110"
+            />
+          </div>
+          <div class="p-4 md:p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl md:text-2xl font-bold text-gray-800">Traditional Forest Honey</h3>
+              <span class="text-xs bg-gray-100 px-2 py-1 rounded">500g</span>
+            </div>
+            <p class="text-gray-600 mb-4 text-sm md:text-base">Wild harvested from the highland forests of Ethiopia, with rich, complex flavors.</p>
+            <div class="flex justify-between items-center">
+              <!-- <a href='#' class="text-yellow-600 font-semibold hover:text-yellow-800 transition flex items-center text-sm md:text-base">
+                Details <i class="fas fa-chevron-right ml-1 text-sm"></i>
+              </a> -->
+              <!-- <button class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-bold transition flex items-center">
+                <i class="fas fa-shopping-cart mr-1 md:mr-2"></i> Add
+              </button> -->
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 border-2 border-yellow-400/30">
+          <div class="relative h-56 md:h-64 bg-white flex items-center justify-center p-4 md:p-6 honey-drip">
+            <img
+              src="/img-2.jpg"
+              alt="White Honey"
+              class="h-40 md:h-48 object-contain transition-transform duration-500 hover:scale-110"
+            />
+          </div>
+          <div class="p-4 md:p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl md:text-2xl font-bold text-gray-800">White Honey</h3>
+              <span class="text-xs bg-gray-100 px-2 py-1 rounded">500g</span>
+            </div>
+            <p class="text-gray-600 mb-4 text-sm md:text-base">Rare white honey from the highlands, with a delicate floral aroma and smooth texture.</p>
+            <div class="flex justify-between items-center">
+              <!-- <a href='#' class="text-yellow-600 font-semibold hover:text-yellow-800 transition flex items-center text-sm md:text-base">
+                Details <i class="fas fa-chevron-right ml-1 text-sm"></i>
+              </a> -->
+              <!-- <button class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-bold transition flex items-center">
+                <i class="fas fa-shopping-cart mr-1 md:mr-2"></i> Add
+              </button> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 border-2 border-yellow-400/30">
+          <div class="relative h-56 md:h-64 bg-white flex items-center justify-center p-4 md:p-6 honey-drip">
+            <img
+              src="DarkHoney.png"
+              alt="Darker Honey"
+              class="h-40 md:h-48 object-contain transition-transform duration-500 hover:scale-110"
+            />
+          </div>
+          <div class="p-4 md:p-6">
+            <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-800">Darker Honey</h3>
+                <span class="text-xs bg-gray-100 px-2 py-1 rounded">500g</span>
+            </div>
+            <p class="text-gray-600 mb-4 text-sm md:text-base">Deep amber honey with bold, robust flavors and intense caramel notes.</p>
+            <div class="flex justify-between items-center">
+              <!-- <a href='details.html' class="text-yellow-600 font-semibold hover:text-yellow-800 transition flex items-center text-sm md:text-base">
+                Details <i class="fas fa-chevron-right ml-1 text-sm"></i>
+              </a> -->
+              <!-- <button class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-bold transition flex items-center">
+                <i class="fas fa-shopping-cart mr-1 md:mr-2"></i> Add
+              </button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   
+  <!-- Contact Section -->
+  <section id="contact" class="bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-yellow-200">
+        <div class="p-6 sm:p-8 md:p-10 text-center">
+          <!-- Header -->
+          <div class="mb-8 md:mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+            <div class="w-20 h-1 bg-yellow-400 mx-auto"></div>
+          </div>
+          
+          <!-- Contact Info -->
+          <div class="space-y-6 max-w-md mx-auto">
+            <p class="text-base md:text-lg text-gray-600 leading-relaxed">
+              Have questions? Our team is ready to help you with anything you need.
+            </p>
+            
+            <div class="flex flex-col gap-4 justify-center">
+              <!-- Email -->
+              <div class="flex items-center bg-white p-3 md:p-4 rounded-lg shadow-sm border border-yellow-100 hover:border-yellow-300 transition-all">
+                <div class="bg-yellow-100 p-2 md:p-3 rounded-full mr-3 md:mr-4">
+                  <i class="fas fa-envelope text-yellow-600 text-lg md:text-xl"></i>
+                </div>
+                <div class="text-left">
+                  <p class="text-sm font-medium text-gray-500">Email us at</p>
+                  <p class="text-base font-semibold text-gray-800">info@squareevents.com</p>
+                </div>
+              </div>
+              
+              <!-- Phone -->
+              <div class="flex items-center bg-white p-3 md:p-4 rounded-lg shadow-sm border border-yellow-100 hover:border-yellow-300 transition-all">
+                <div class="bg-yellow-100 p-2 md:p-3 rounded-full mr-3 md:mr-4">
+                  <i class="fas fa-phone text-yellow-600 text-lg md:text-xl"></i>
+                </div>
+                <div class="text-left">
+                  <p class="text-sm font-medium text-gray-500">Call us at</p>
+                  <p class="text-base font-semibold text-gray-800">(+21) 123 456 586</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <div class="bg-gray-950 text-white">
+    <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <!-- Branding -->
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-yellow-400">Red Harvest Honey</h2>
+          <p class="text-gray-400 mt-4 text-sm leading-relaxed">
+            Sourced from Ethiopia’s finest highlands, our honey is nature's golden gift—pure, rich, and unforgettable.
+          </p>
+        </div>
+    
+        <!-- Quick Links -->
+        <div class="flex flex-col space-y-2">
+          <h3 class="text-xl font-semibold mb-2 text-white">Quick Links</h3>
+          <a href="#home" class="text-gray-400 hover:text-yellow-400 transition-all">Home</a>
+          <a href="#about" class="text-gray-400 hover:text-yellow-400 transition-all">About Us</a>
+          <a href="#gallery" class="text-gray-400 hover:text-yellow-400 transition-all">Gallery</a>
+          <a href="#contact" class="text-gray-400 hover:text-yellow-400 transition-all">Contact</a>
+          <a href="#products" class="text-gray-400 hover:text-yellow-400 transition-all">Products</a>
+        </div>
+    
+        <!-- Contact & Social -->
+        <div>
+          <h3 class="text-xl font-semibold mb-3 text-white">Get in Touch</h3>
+          <p class="text-gray-400 text-sm">Email: info@redharvesthoney.com</p>
+          <p class="text-gray-400 text-sm mb-4">Phone: +251 900 000 000</p>
+    
+          <!-- Social Icons -->
+          <div class="flex space-x-4 mt-3">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram" class="hover:text-yellow-400 transition">
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+            <!-- Twitter / X -->
+            <a href="https://x.com/" target="_blank" aria-label="Twitter" class="hover:text-yellow-400 transition">
+              <i class="fab fa-twitter text-xl"></i>
+            </a>
+            <!-- Facebook -->
+            <a href="https://web.facebook.com/" target="_blank" aria-label="Facebook" class="hover:text-yellow-400 transition">
+              <i class="fab fa-facebook-f text-xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Bottom copyright -->
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
+        © 2025 <span class="text-yellow-400 font-semibold">Red Harvest Honey</span>. All rights reserved.
+      </div>
+    </footer>
+  </div>
+  
+  <script>
+    // Mobile menu toggle functionality
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuToggle.addEventListener('click', () => {
+      const icon = menuToggle.querySelector('i');
+      
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        mobileMenu.classList.add('hidden');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+    
+    // Close mobile menu when clicking on links
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        const icon = menuToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      });
+    });
+  </script>
+</body>
+</html>

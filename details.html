@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | Red Harvest Honey</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .honey-drip-effect {
+      position: relative;
+      overflow: hidden;
+    }
+    .honey-drip-effect::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120%;
+      height: 20px;
+      background: radial-gradient(ellipse at center, rgba(234,179,8,0.4) 0%, rgba(234,179,8,0) 70%);
+    }
+    @media (max-width: 768px) {
+      .honeycomb-bg {
+        background-size: 60px;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen relative pt-16 bg-gray-50">
+  <!-- Mobile Navbar (same as index.html) -->
+  <section class="fixed top-0 left-0 w-full z-50 bg-white shadow mobile-nav">
+    <nav class="bg-white shadow flex items-center justify-between px-4 py-4">
+      <div class="flex items-center">
+        <button id="mobile-menu-toggle" class="text-gray-700">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+      <div class="flex items-center">
+        <img src="./Logo.PNG" class="w-12" alt="Logo">
+      </div>
+      <div class="w-8"></div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden bg-white shadow-lg">
+      <div class="flex flex-col py-4">
+        <a href="index.html#home" class="px-6 py-3 text-gray-700 hover:bg-yellow-50 hover:text-yellow-600">Home</a>
+        <a href="index.html#about" class="px-6 py-3 text-gray-700 hover:bg-yellow-50 hover:text-yellow-600">About</a>
+        <a href="index.html#gallery" class="px-6 py-3 text-gray-700 hover:bg-yellow-50 hover:text-yellow-600">Gallery</a>
+        <a href="index.html#contact" class="px-6 py-3 text-gray-700 hover:bg-yellow-50 hover:text-yellow-600">Contact</a>
+        <a href="index.html#products" class="px-6 py-3 text-gray-700 hover:bg-yellow-50 hover:text-yellow-600">Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Desktop Navbar (same as index.html) -->
+  <section class="fixed top-0 left-0 w-full z-50 bg-white shadow desktop-nav">
+    <nav class="bg-white shadow flex items-center justify-around px-4 md:px-10 py-4">
+      <div class="flex items-center space-x-4 md:space-x-6 flex-[0.8]">
+        <a href="index.html#home" class="text-gray-700 hover:text-yellow-500 text-sm">Home</a>
+        <a href="index.html#about" class="text-gray-700 hover:text-yellow-500 text-sm">About</a>
+        <a href="index.html#gallery" class="text-gray-700 hover:text-yellow-500 text-sm">Gallery</a>
+      </div>
+      <div class="flex items-center flex-shrink-0">
+        <img src="./Logo.PNG" class="w-16" alt="Logo">
+      </div>
+      <div class="flex items-center space-x-4 md:space-x-6 flex-[0.8] justify-end">
+          <a href="index.html#contact" class="text-gray-700 hover:text-yellow-500 text-sm">Contact</a>
+          <a href="index.html#products" class="text-gray-700 hover:text-yellow-500 text-sm">Products</a>
+      </div>
+    </nav>
+  </section>
+
+  <!-- Product Detail Section -->
+  <section class="py-12 md:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+      <!-- Product Images -->
+      <div class="space-y-4">
+        <!-- Main Image -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 honey-drip-effect">
+          <img src="DarkHoney.png" alt="Traditional Forest Honey" class="w-full h-auto max-h-96 object-contain p-6">
+        </div>
+        
+        <!-- Thumbnail Gallery -->
+        <div class="grid grid-cols-4 gap-3">
+          <div class="cursor-pointer border border-gray-200 rounded-lg overflow-hidden hover:border-yellow-400 transition">
+            <img src="./img-3.jpg" alt="Honey Front View" class="w-full h-20 object-cover">
+          </div>
+          <div class="cursor-pointer border border-gray-200 rounded-lg overflow-hidden hover:border-yellow-400 transition">
+            <img src="./photo_2025-07-24_14-05-25.jpg" alt="Honey Side View" class="w-full h-20 object-cover">
+          </div>
+          <div class="cursor-pointer border border-gray-200 rounded-lg overflow-hidden hover:border-yellow-400 transition">
+            <img src="./photo_2025-07-24_14-05-34.jpg" alt="Honey Texture" class="w-full h-20 object-cover">
+          </div>
+          <div class="cursor-pointer border border-gray-200 rounded-lg overflow-hidden hover:border-yellow-400 transition">
+            <img src="./honeyIMG.png" alt="Honey Usage" class="w-full h-20 object-cover">
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Info -->
+      <div>
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Traditional Forest Honey</h1>
+        <div class="flex items-center mb-4">
+          <div class="flex text-yellow-400 mr-2">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <!-- <span class="text-gray-600 text-sm">(48 reviews)</span> -->
+        </div>
+
+        <p class="text-gray-700 mb-6">Wild harvested from the pristine highland forests of Ethiopia, this honey carries the essence of diverse wildflowers and ancient trees. Each jar is a testament to traditional beekeeping methods passed down through generations.</p>
+
+        <div class="mb-6">
+          <span class="ml-2 text-sm text-gray-500">(500g jar)</span>
+        </div>
+
+        <!-- Product Details Tabs -->
+        <div class="mb-6 border-b border-gray-200">
+          <ul class="flex flex-wrap -mb-px" id="productTabs" role="tablist">
+            <li class="mr-2" role="presentation">
+              <button class="inline-block p-4 border-b-2 border-yellow-400 rounded-t-lg text-yellow-500 font-medium" id="details-tab" data-tabs-target="#details" type="button" role="tab" aria-controls="details" aria-selected="true">Details</button>
+            </li>
+            <li class="mr-2" role="presentation">
+              <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 font-medium" id="benefits-tab" data-tabs-target="#benefits" type="button" role="tab" aria-controls="benefits" aria-selected="false">Benefits</button>
+            </li>
+            <li class="mr-2" role="presentation">
+              <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 font-medium" id="usage-tab" data-tabs-target="#usage" type="button" role="tab" aria-controls="usage" aria-selected="false">Usage</button>
+            </li>
+          </ul>
+        </div>
+
+        <div id="productTabContent">
+          <!-- Details Tab -->
+          <div class="p-4 rounded-lg bg-gray-50 mb-4" id="details" role="tabpanel" aria-labelledby="details-tab">
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i>
+                <span><strong>Origin:</strong> Highland forests of Ethiopia</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i>
+                <span><strong>Harvest Season:</strong> Spring & Summer</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i>
+                <span><strong>Texture:</strong> Thick, creamy with natural crystallization</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i>
+                <span><strong>Flavor Profile:</strong> Rich, woody with floral undertones</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i>
+                <span><strong>Color:</strong> Deep amber with golden highlights</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Benefits Tab (hidden by default) -->
+          <div class="hidden p-4 rounded-lg bg-gray-50 mb-4" id="benefits" role="tabpanel" aria-labelledby="benefits-tab">
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <i class="fas fa-heart text-yellow-500 mt-1 mr-2"></i>
+                <span>Rich in antioxidants that support immune health</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-heart text-yellow-500 mt-1 mr-2"></i>
+                <span>Natural energy booster with easily digestible sugars</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-heart text-yellow-500 mt-1 mr-2"></i>
+                <span>Contains antimicrobial properties</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-heart text-yellow-500 mt-1 mr-2"></i>
+                <span>Soothes throat irritation and coughs</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-heart text-yellow-500 mt-1 mr-2"></i>
+                <span>May help with seasonal allergies when consumed locally</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Usage Tab (hidden by default) -->
+          <div class="hidden p-4 rounded-lg bg-gray-50 mb-4" id="usage" role="tabpanel" aria-labelledby="usage-tab">
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <i class="fas fa-mug-hot text-yellow-500 mt-1 mr-2"></i>
+                <span>Perfect sweetener for tea, coffee, or warm milk</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-bread-slice text-yellow-500 mt-1 mr-2"></i>
+                <span>Drizzle over pancakes, waffles, or toast</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-cheese text-yellow-500 mt-1 mr-2"></i>
+                <span>Pairs beautifully with cheese platters</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-mortar-pestle text-yellow-500 mt-1 mr-2"></i>
+                <span>Use in marinades, dressings, or glazes</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-spa text-yellow-500 mt-1 mr-2"></i>
+                <span>Can be used in homemade skincare as a natural humectant</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (same as index.html) -->
+  <div class="bg-gray-950 text-white mt-16">
+    <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-yellow-400">Red Harvest Honey</h2>
+          <p class="text-gray-400 mt-4 text-sm leading-relaxed">
+            Sourced from Ethiopia's finest highlands, our honey is nature's golden gift—pure, rich, and unforgettable.
+          </p>
+        </div>
+    
+        <div class="flex flex-col space-y-2">
+          <h3 class="text-xl font-semibold mb-2 text-white">Quick Links</h3>
+          <a href="index.html#home" class="text-gray-400 hover:text-yellow-400 transition-all">Home</a>
+          <a href="index.html#about" class="text-gray-400 hover:text-yellow-400 transition-all">About Us</a>
+          <a href="index.html#contact" class="text-gray-400 hover:text-yellow-400 transition-all">Contact</a>
+          <a href="index.html#products" class="text-gray-400 hover:text-yellow-400 transition-all">Products</a>
+        </div>
+    
+        <div>
+          <h3 class="text-xl font-semibold mb-3 text-white">Get in Touch</h3>
+          <p class="text-gray-400 text-sm">Email: info@redharvesthoney.com</p>
+          <p class="text-gray-400 text-sm mb-4">Phone: +251 900 000 000</p>
+    
+          <div class="flex space-x-4 mt-3">
+            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram" class="hover:text-yellow-400 transition">
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+            <a href="https://x.com/" target="_blank" aria-label="Twitter" class="hover:text-yellow-400 transition">
+              <i class="fab fa-twitter text-xl"></i>
+            </a>
+            <a href="https://web.facebook.com/" target="_blank" aria-label="Facebook" class="hover:text-yellow-400 transition">
+              <i class="fab fa-facebook-f text-xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
+        © 2025 <span class="text-yellow-400 font-semibold">Red Harvest Honey</span>. All rights reserved.
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Mobile menu toggle (same as index.html)
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuToggle.addEventListener('click', () => {
+      const icon = menuToggle.querySelector('i');
+      
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        mobileMenu.classList.add('hidden');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+    
+    // Close mobile menu when clicking on links
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        const icon = menuToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      });
+    });
+
+    // Product tabs functionality
+    const tabs = document.querySelectorAll('[data-tabs-target]');
+    const tabContents = document.querySelectorAll('[role="tabpanel"]');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = document.querySelector(tab.dataset.tabsTarget);
+        
+        // Hide all tab contents
+        tabContents.forEach(content => {
+          content.classList.add('hidden');
+        });
+        
+        // Show selected tab content
+        target.classList.remove('hidden');
+        
+        // Update active tab styling
+        tabs.forEach(t => {
+          t.classList.remove('border-yellow-400', 'text-yellow-500');
+          t.classList.add('border-transparent', 'hover:text-gray-600', 'hover:border-gray-300');
+        });
+        
+        tab.classList.add('border-yellow-400', 'text-yellow-500');
+        tab.classList.remove('border-transparent', 'hover:text-gray-600', 'hover:border-gray-300');
+      });
+    });
+
+    // Quantity selector
+    const minusBtn = document.querySelector('.flex.items-center.border button:first-child');
+    const plusBtn = document.querySelector('.flex.items-center.border button:last-child');
+    const quantityDisplay = document.querySelector('.flex.items-center.border span');
+    
+    let quantity = 1;
+    
+    minusBtn.addEventListener('click', () => {
+      if (quantity > 1) {
+        quantity--;
+        quantityDisplay.textContent = quantity;
+      }
+    });
+    
+    plusBtn.addEventListener('click', () => {
+      quantity++;
+      quantityDisplay.textContent = quantity;
+    });
+  </script>
+</body>
+</html>
